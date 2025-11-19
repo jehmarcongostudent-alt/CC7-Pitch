@@ -1,0 +1,45 @@
+
+.NavBar{
+	height: 100px;
+	width: 100%;
+	padding:10px;
+	border:2px solid red;
+	position: fixed;
+	background-color: #1468a2;
+	
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+	
+	box-sizing: border-box; /* important fix */
+}
+.logo{
+	height: 100px;
+	width: 100px;
+}
+.NavPages {
+    display: flex;
+    gap: 25px;          /* space between links */
+    margin-left: auto;  /* push links to the right */
+    margin-right: 30px; /* fixed distance from the right edge */
+}
+.NavPages a {
+    color: white;                 /* text color */
+    text-decoration: none;        /* remove underline */
+    margin-left: 25px;            /* spacing between links */
+    font-size: 18px;              /* adjust text size */
+    font-family: Arial, sans-serif;
+    font-weight: 500;             /* slightly bold */
+	font: poppins;
+}
+.NavPages a:hover {
+    color: #ffdd57;               /* highlight color */
+    transition: 0.3s;             /* smooth transition */
+}
+/* Style for the active (current) page link */
+.NavPages a.active {
+    background-color: white; /* White background */
+	padding: 5px;
+    color: #1468a2;             /* Blue font color */
+	border-radius: 10px;	/*makes box rounder*/
+}
