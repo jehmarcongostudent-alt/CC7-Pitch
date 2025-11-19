@@ -1,0 +1,86 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #e9f3ff;
+    padding: 50px;
+}
+
+.goal-container {
+    width: 90%;
+    max-width: 600px;
+    margin: auto;
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin-top: 140px;
+}
+
+.goal-container h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #1468a2;
+}
+
+.goal-input {
+    display: flex;
+    gap: 10px;
+}
+
+.goal-input input {
+    flex: 1;
+    padding: 10px;
+    border: 2px solid #1468a2;
+    border-radius: 10px;
+}
+
+.goal-input button {
+    padding: 10px 15px;
+    background: #1468a2;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.goal-input button:hover {
+    background: #0f4f7a;
+}
+
+#goalList {
+    margin-top: 20px;
+    list-style: none;
+    padding: 0;
+}
+
+.goal-item {
+    background: #f4f9ff;
+    padding: 12px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.goal-item.completed {
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+
+.goal-buttons button {
+    margin-left: 8px;
+    padding: 5px 8px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.complete-btn {
+    background: #4CAF50;
+    color: white;
+}
+
+.delete-btn {
+    background: #e63946;
+    color: white;
+}
