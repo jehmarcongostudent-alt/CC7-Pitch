@@ -5,6 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Sikap</title>
 	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="goal.css">
 </head>
 <body>
 	<div class="NavBar">
@@ -18,7 +19,21 @@
 			<a href="Extra.html">Extra</a>
 		</div>
 	</div>
+
+    <div class="goal-container">
+        <h1>Goal Tracker</h1>
+
+        <div class="goal-input">
+            <input type="text" id="goalText" placeholder="Enter a new goal...">
+            <button onclick="addGoal()">Add Goal</button>
+        </div>
+
+        <ul id="goalList"></ul>
+    </div>
+
+    <script src="goal.js"></script>
 	
 </body>
 
 </html>
+
