@@ -1,9 +1,14 @@
-
+body {
+    margin: 0;
+    padding-top: 0px;
+    background: #e9f3ff;
+    font-family: Arial, sans-serif;
+}
 .NavBar{
 	height: 100px;
 	width: 100%;
 	padding:10px;
-	border:2px solid red;
+	border:2px solid transparent;
 	position: fixed;
 	background-color: #1468a2;
 	
