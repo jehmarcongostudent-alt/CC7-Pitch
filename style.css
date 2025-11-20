@@ -48,3 +48,35 @@ body {
     color: #1468a2;             /* Blue font color */
 	border-radius: 10px;	/*makes box rounder*/
 }
+.Function-Container{
+    display: flex;               /* enable flexbox */
+	justify-content: center;
+    gap: 20px;                   /* space between the boxes */
+}
+.Function-Container p{
+	color: White;
+}	
+.Function-Container h1{
+	color: White;
+}
+.FuncBox{
+    display: flex;                  /* make text inside easy to align */	
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;          /* remove underline */
+    color: white;                   /* text color */
+	height: 200px;
+	width: 260px;
+	padding:10px;
+	border:2px solid transparent;
+	position: relative;
+	background-color: #104271;
+	top: 250px;
+	border-radius: 10px;	/*makes box rounder*/
+    transition: 0.3s;
+}
+.FuncBox:hover {
+    background-color: #1468a2;      /* hover effect */
+    cursor: pointer;                /* shows pointer */
+}
