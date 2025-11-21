@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Sikap</title>
+	<link rel="stylesheet" href="result.css">
+</head>
+<body>
+	<div class="results-container">
+    <h2>Your Top Personality Types</h2>
+
+    <div class="codes">
+        <span class="code-tag">R – Realistic</span>
+        <span class="code-tag">I – Investigative</span>
+        <span class="code-tag">A – Artistic</span>
+    </div>
+
+    <h3>Recommended College Programs</h3>
+    <table>
+        <tr>
+            <th>Program Name</th>
+            <th>Related Personality</th>
+        </tr>
+        <tr>
+            <td>BS Information Technology</td>
+            <td>Realistic, Investigative</td>
+        </tr>
+        <tr>
+            <td>BS Psychology</td>
+            <td>Investigative, Social</td>
+        </tr>
+        <tr>
+            <td>BA Multimedia Arts</td>
+            <td>Artistic</td>
+        </tr>
+    </table>
+
+    <h3>Possible Career Paths</h3>
+    <table>
+        <tr>
+            <th>Career</th>
+            <th>Personality Match</th>
+        </tr>
+        <tr>
+            <td>IT Support Specialist</td>
+            <td>Realistic</td>
+        </tr>
+        <tr>
+            <td>Research Analyst</td>
+            <td>Investigative</td>
+        </tr>
+        <tr>
+            <td>Graphic Designer</td>
+            <td>Artistic</td>
+        </tr>
+    </table>
+</div>
+</body>
