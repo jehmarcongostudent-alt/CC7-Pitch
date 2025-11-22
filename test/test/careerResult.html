@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RIASEC Results</title>
+<link rel="stylesheet" href="result.css">
+</head>
+<body>
+
+<div class="results-container">
+    <h2>Your Top Personality Types</h2>
+    <div id="codes" class="codes"></div>
+
+    <h3>Recommended College Programs</h3>
+    <table id="programTable">
+        <tr>
+            <th>Program Name</th>
+            <th>Related Codes</th>
+        </tr>
+    </table>
+
+    <h3>Possible Career Paths</h3>
+    <table id="careerTable">
+        <tr>
+            <th>Career</th>
+            <th>Related Codes</th>
+        </tr>
+    </table>
+</div>
+
+<script>
+// Paste your full RIASEC_DATA here
+const RIASEC_DATA = { /* your full dataset here */ };
+
+// Load top 3 from localStorage
+let top3 = JSON.parse(localStorage.getItem("topRIASEC")) || ["R","I","A"]; // fallback
+
+// Display top 3 with links to O*NET
+document.getElementById("codes").innerHTML = top3.map(code => {
+    return `<span class="code-tag">${RIASEC_DATA[code].name} 
+            <a href="${RIASEC_DATA[code].link}" target="_blank">[More]</a></span>`;
+}).join(" ");
+
+// Fill program table
+const programTable = document.getElementById("programTable");
+top3.forEach(code => {
+    RIASEC_DATA[code].programs.forEach(programName => {
+        let row = programTable.insertRow();
+        row.insertCell(0).innerText = programName;
+        row.insertCell(1).innerText = RIASEC_DATA[code].name;
+    });
+});
+
+// Fill career table
+const careerTable = document.getElementById("careerTable");
+top3.forEach(code => {
+    RIASEC_DATA[code].careers.forEach(careerName => {
+        let row = careerTable.insertRow();
+        row.insertCell(0).innerText = careerName;
+        row.insertCell(1).innerText = RIASEC_DATA[code].name;
+    });
+});
+</script>
+
+</body>
+</html>

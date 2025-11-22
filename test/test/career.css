@@ -1,0 +1,30 @@
+.quiz-container {
+    width: 80%;
+    max-width: 600px;
+    margin: 120px auto;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+}
+
+.quiz-container h2 {
+    text-align: center;
+}
+
+.quiz-container label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.submit-btn {
+    margin-top: 20px;
+    width: 100%;
+    padding: 12px;
+    background-color: #1468a2;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
