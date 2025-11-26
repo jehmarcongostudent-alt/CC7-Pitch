@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Sikap</title>
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="career.css">
+</head>
+<body>
+	<div class="NavBar">
+		<img src="Images/sikap-home-logo.png" alt="SIKAP" class="logo">
+		
+		<div class="NavPages">
+			<a href="index.html">Home</a>
+			<a href="GoalTracker.html">Goal Tracker</a>
+			<a href="#" class="active">Career Path Finder</a>
+			<a href="Extra.html">Extra</a>
+			<a href="settings.html">Settings</a>
+		</div>
+	</div>
+	
+	<div class="quiz-container">
+		<h2>Get to Know Yourself</h2>
+		<p>Select the activities that you enjoy or relate to.</p>
+
+		<form id="riasecForm">
+
+			<h3>Interests</h3>
+
+			<!-- REALISTIC -->
+			<label><input type="checkbox" value="R"> I like to work on cars</label>
+			<label><input type="checkbox" value="R"> I enjoy building or fixing things</label>
+			<label><input type="checkbox" value="R"> I like to take care of animals</label>
+			<label><input type="checkbox" value="R"> I like putting things together or assembling things</label>
+			<label><input type="checkbox" value="R"> I like to cook</label>
+			<label><input type="checkbox" value="R"> I am a practical person</label>
+			<label><input type="checkbox" value="R"> I like working outdoors</label>
+
+			<!-- INVESTIGATIVE -->
+			<label><input type="checkbox" value="I"> I like solving puzzles</label>
+			<label><input type="checkbox" value="I"> I enjoy experiments</label>
+			<label><input type="checkbox" value="I"> I enjoy science</label>
+			<label><input type="checkbox" value="I"> I am curious about how things work</label>
+			<label><input type="checkbox" value="I"> I like to analyze things</label>
+			<label><input type="checkbox" value="I"> I like working with numbers or charts</label>
+			<label><input type="checkbox" value="I"> I am good at math</label>
+
+			<!-- ARTISTIC -->
+			<label><input type="checkbox" value="A"> I am good at working independently</label>
+			<label><input type="checkbox" value="A"> I like to read about arts and music</label>
+			<label><input type="checkbox" value="A"> I enjoy creative writing</label>
+			<label><input type="checkbox" value="A"> I am a creative person</label>
+			<label><input type="checkbox" value="A"> I like drawing or designing</label>
+			<label><input type="checkbox" value="A"> I enjoy creating videos or music</label>
+			<label><input type="checkbox" value="A"> I like acting in plays</label>
+
+			<!-- SOCIAL -->
+			<label><input type="checkbox" value="S"> I like helping people</label>
+			<label><input type="checkbox" value="S"> I enjoy teaching others</label>
+			<label><input type="checkbox" value="S"> I work well in groups</label>
+			<label><input type="checkbox" value="S"> I am interested in healing people</label>
+			<label><input type="checkbox" value="S"> I enjoy learning about others culture</label>
+			<label><input type="checkbox" value="S"> I like to get into discussions about issues</label>
+			<label><input type="checkbox" value="S"> I like to help people solve their problems</label>
+
+			<!-- ENTERPRISING -->
+			<label><input type="checkbox" value="E"> I like persuading or influencing people</label>
+			<label><input type="checkbox" value="E"> I am an ambitious person, I set goals for myself</label>
+			<label><input type="checkbox" value="E"> I like leading</label>
+			<label><input type="checkbox" value="E"> I like selling things</label>
+			<label><input type="checkbox" value="E"> I am quick to take on new responsibilities</label>
+			<label><input type="checkbox" value="E"> I would like to start my own business</label>
+			<label><input type="checkbox" value="E"> I like to give speeches</label>
+
+			<!-- CONVENTIONAL -->
+			<label><input type="checkbox" value="C"> I like organizing files or data</label>
+			<label><input type="checkbox" value="C"> I follow instructions carefully</label>
+			<label><input type="checkbox" value="C"> I would'nt mind working 8 hours a day in an office</label>
+			<label><input type="checkbox" value="C"> I pay attention to details</label>
+			<label><input type="checkbox" value="C"> I like to do filing or typing</label>
+			<label><input type="checkbox" value="C"> I am good at keeping records of my work</label>
+			<label><input type="checkbox" value="C"> I would like to work in an office</label>
+
+			<button type="button" class="submit-btn" onclick="calculateRIASEC()">See My Career Matches</button>
+		</form>
+	</div>
+
+	<script>
+	function calculateRIASEC() {
+		const checks = document.querySelectorAll("input[type='checkbox']:checked");
+
+		// RIASEC counters
+		let scores = { R:0, I:0, A:0, S:0, E:0, C:0 };
+
+		checks.forEach(cb => {
+			scores[cb.value]++;
+		});
+
+		// Convert to sortable array
+		let sorted = Object.entries(scores).sort((a,b) => b[1] - a[1]);
+
+		// Top 3 codes
+		let top3 = sorted.slice(0,3).map(item => item[0]);
+
+		// Save to the next page
+		localStorage.setItem("topRIASEC", JSON.stringify(top3));
+
+		// Go to results
+		window.location.href = "careerResult.html";
+	}
+	</script>
+	
+	<script src="theme.js"></script>
+</body>
+</html>
