@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Sikap</title>
+	<link rel="stylesheet" href="style.css">
+	<script defer src="theme.js"></script>
+</head>
+<body>
+	<div class="NavBar">
+		<img src="Images/sikap-home-logo.png" alt="SIKAP" class="logo">
+		
+		<div class="NavPages">
+			<a href="index.html">Home</a>
+			<a href="GoalTracker.html">Goal Tracker</a>
+			<a href="career.html">Career Path Finder</a>
+			<a href="Extra.html">Extra</a>
+			<a href="settings.html" class="active">Settings</a>
+		</div>
+	</div>
+
+<div class="settings-wrapper">
+
+    <div class="settings-box">
+        <h2>⚙️ Website Settings</h2>
+        <p class="settings-subtitle">Customize your experience</p>
+
+        <div class="setting-item">
+            <span>Dark Mode</span>
+            <label class="switch">
+                <input type="checkbox" id="darkMode">
+                <span class="slider round"></span>
+            </label>
+        </div>
+
+        <div class="setting-item">
+            <span>Navbar Color</span>
+            <input type="color" id="navbarColor" class="color-picker">
+        </div>
+
+        <button id="saveBtn" class="save-btn">Save Settings</button>
+		<button id="resetBtn" class="reset-btn">Reset to Default</button>
+
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+.results-container {
+    width: 85%;
+    max-width: 700px;
+    margin: 140px auto;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+	position: relative;
+}
+
+.results-container a {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+	text-decoration: none;
+	color: inherit;
+	font-size: 25px;
+}
+
+.codes {
+    margin: 15px 0;
+}
+
+.code-tag {
+    display: inline-block;
+    background: #1468a2;
+    color: white;
+    padding: 8px 12px;
+    margin-right: 10px;
+    border-radius: 6px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 10px;
+}

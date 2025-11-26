@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RIASEC Results</title>
+    <link rel="stylesheet" href="result.css">
+</head>
+<body>
+
+<div class="results-container">
+    <h2>Your Top Personality Types</h2>
+	
+	<a href="index.html" class="return">x</a>
+
+    <div id="codes" class="codes"></div>
+
+    <h3>Recommended College Programs</h3>
+    <table id="programTable">
+        <tr>
+            <th>Program Name</th>
+            <th>Related Codes</th>
+        </tr>
+    </table>
+
+    <h3>Possible Career Paths</h3>
+    <table id="careerTable">
+        <tr>
+            <th>Career</th>
+            <th>Related Codes</th>
+        </tr>
+    </table>
+</div>
+
+<script>
+// DATABASE — YOU CAN EDIT THIS ANYTIME
+const programRecommendations = {
+    R: [
+        ["BS Mechanical Engineering", "R"],
+        ["BS Industrial Technology", "R"],
+        ["BS Architecture", "R,A"]
+    ],
+    I: [
+        ["BS Biology", "I"],
+        ["BS Computer Science", "I,R"],
+        ["BS Psychology", "I,S"]
+    ],
+    A: [
+        ["BA Multimedia Arts", "A"],
+        ["BS Graphic Design", "A"],
+        ["BA Communication", "A,S"]
+    ],
+    S: [
+        ["BS Nursing", "S"],
+        ["BS Education", "S"],
+        ["BS Social Work", "S"]
+    ],
+    E: [
+        ["BS Business Administration", "E"],
+        ["BS Marketing", "E,A"],
+        ["Entrepreneurship", "E"]
+    ],
+    C: [
+        ["BS Accountancy", "C"],
+        ["BS Office Administration", "C"],
+        ["BS Information Systems", "C,R"]
+    ]
+};
+
+const careerRecommendations = {
+    R: [
+        ["Automotive Technician", "R"],
+        ["Architectural Draftsman", "R,A"]
+    ],
+    I: [
+        ["Research Analyst", "I"],
+        ["Lab Technician", "I"]
+    ],
+    A: [
+        ["Graphic Designer", "A"],
+        ["Animator", "A"]
+    ],
+    S: [
+        ["Teacher", "S"],
+        ["Nurse", "S"]
+    ],
+    E: [
+        ["Sales Manager", "E"],
+        ["Project Coordinator", "E"]
+    ],
+    C: [
+        ["Accountant", "C"],
+        ["Data Encoder", "C"]
+    ]
+};
+
+// LOAD RESULTS
+let top3 = JSON.parse(localStorage.getItem("topRIASEC"));
+
+// DISPLAY TOP 3
+document.getElementById("codes").innerHTML =
+    top3.map(code => `<span class="code-tag">${code}</span>`).join(" ");
+
+// FILL PROGRAM TABLE
+const programTable = document.getElementById("programTable");
+top3.forEach(code => {
+    programRecommendations[code].forEach(item => {
+        let row = programTable.insertRow();
+        row.insertCell(0).innerHTML = item[0];
+        row.insertCell(1).innerHTML = item[1];
+    });
+});
+
+// FILL CAREER TABLE
+const careerTable = document.getElementById("careerTable");
+top3.forEach(code => {
+    careerRecommendations[code].forEach(item => {
+        let row = careerTable.insertRow();
+        row.insertCell(0).innerHTML = item[0];
+        row.insertCell(1).innerHTML = item[1];
+    });
+});
+</script>
+
+</body>
+</html>
