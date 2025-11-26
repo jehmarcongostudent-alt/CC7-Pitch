@@ -245,3 +245,20 @@ input:checked + .slider:before {
 .reset-btn:hover {
     background: #cfcfcf;
 }
+
+/* Default (light mode) */
+.quiz-container {
+    background: #ffffff;
+    color: #000000;
+}
+
+/* DARK MODE FIX — when dark mode is active */
+[data-theme="dark"] .quiz-container {
+    background: #1e1e1e;   /* dark gray */
+    color: #ffffff;        /* white text */
+}
+
+/* make labels follow text color */
+[data-theme="dark"] .quiz-container label {
+    color: #ffffff;
+}
