@@ -17,6 +17,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+	z-index: 9999;
 	
 	box-sizing: border-box; /* important fix */
 }
@@ -80,6 +81,36 @@ body {
 .FuncBox:hover {
     background-color: #1468a2;      /* hover effect */
     cursor: pointer;                /* shows pointer */
+}
+
+.function-title {
+    text-align: center;
+    font-size: 32px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    color: var(--text-color);
+    font-weight: 700;
+}
+
+/* ========= Survey Button ========= */
+.SurveyForm {
+    text-align: center;
+    margin-top: 40px;
+}
+	
+.survey-button {
+    display: inline-block;
+    padding: 12px 20px;
+    background: #1468a2;
+    color: white;
+    text-decoration: none;  /* removes underline */
+    border-radius: 8px;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.survey-button:hover {
+    background: #0d4e7f;
 }
 
 /* ========= THEME VARIABLES ========= */
