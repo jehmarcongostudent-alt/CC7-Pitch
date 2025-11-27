@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Opportunity Hub</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f4f4;
+      color: #222;
+    }
+
+    header {
+      background: #0057b8;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 40px auto;
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      margin-top: 0;
+    }
+
+    .job-site {
+      padding: 15px;
+      border-radius: 10px;
+      border: 1px solid #ddd;
+      margin-bottom: 15px;
+      transition: 0.2s;
+    }
+
+    .job-site:hover {
+      background: #eef6ff;
+      transform: translateY(-2px);
+    }
+
+    a {
+      text-decoration: none;
+      color: #0057b8;
+      font-weight: bold;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .desc {
+      margin-top: 5px;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <header>Opportunity Hub</header>
+
+  <div class="container">
+    <h2>Find Jobs from Trusted Websites</h2>
+    <p>Instead of hosting job posts locally, here are reliable platforms where users can search and apply for jobs.</p>
+
+    <div class="job-site">
+      <a href="https://www.jobstreet.com.ph" target="_blank">JobStreet Philippines</a>
+      <div class="desc">One of the largest job-hunting sites in the Philippines.</div>
+    </div>
+
+    <div class="job-site">
+      <a href="https://www.indeed.com" target="_blank">Indeed</a>
+      <div class="desc">Global job search engine with thousands of listings.</div>
+    </div>
+
+    <div class="job-site">
+      <a href="https://ph.indeed.com/part-time-jobs" target="_blank">Part-Time Jobs (Indeed)</a>
+      <div class="desc">Dedicated page for part-time opportunities.</div>
+    </div>
+
+    <div class="job-site">
+      <a href="https://www.linkedin.com/jobs/" target="_blank">LinkedIn Jobs</a>
+      <div class="desc">Professional network with job postings and company profiles.</div>
+    </div>
+
+    <div class="job-site">
+      <a href="https://www.kalibrr.com/" target="_blank">Kalibrr</a>
+      <div class="desc">Popular in SEA, offers modern job-search experience.</div>
+    </div>
+
+  </div>
+</body>
+</html>

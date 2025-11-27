@@ -74,7 +74,6 @@ body {
 	border:2px solid transparent;
 	position: relative;
 	background-color: #104271;
-	top: 250px;
 	border-radius: 10px;	/*makes box rounder*/
     transition: 0.3s;
 }
@@ -261,4 +260,95 @@ input:checked + .slider:before {
 /* make labels follow text color */
 [data-theme="dark"] .quiz-container label {
     color: #ffffff;
+}
+
+/* ================================
+   ABOUT SECTION
+================================ */
+.AboutSection {
+    width: 90%;
+    max-width: 1000px;
+    margin: 80px auto;
+    padding: 25px;
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+    transition: background 0.3s, color 0.3s;
+}
+
+.AboutSection h1 {
+    margin-bottom: 15px;
+    font-size: 2rem;
+    color: var(--text);
+}
+
+.AboutSection p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--text2);
+}
+
+
+/* ================================
+   TEAM SECTION
+================================ */
+.TeamSection {
+    width: 100%;
+    margin: 60px 0;
+    text-align: center;
+}
+
+.TeamSection h1 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: var(--text);
+}
+
+/* Container for the cards */
+.TeamContainer {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+/* Individual team card */
+.TeamCard {
+    width: 260px;
+    background: var(--bg2);
+    padding: 20px;
+    border-radius: 14px;
+    border: 1px solid var(--border);
+    text-align: center;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+    transition: transform 0.25s ease, background 0.3s;
+}
+
+.TeamCard:hover {
+    transform: translateY(-5px);
+}
+
+/* Image styling */
+.TeamCard img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    border: 3px solid var(--accent);
+}
+
+/* Names */
+.TeamCard h3 {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+    color: var(--text);
+}
+
+/* Roles */
+.TeamCard p {
+    font-size: 0.95rem;
+    color: var(--text2);
 }
