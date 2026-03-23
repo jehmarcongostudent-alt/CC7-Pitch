@@ -85,3 +85,108 @@ body.dark-mode .job-card h3 {
 body.dark-mode .job-card p {
     color: #ddd;
 }
+
+/* ===== CAREER INSIGHTS SECTION ===== */
+.section-title {
+    color: #1468a2;
+    margin: 40px 0 20px;
+    font-size: 1.8rem;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+}
+
+.insight-grid {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto; /* Allows scrolling if many cards are added */
+    padding-bottom: 20px;
+    margin-bottom: 40px;
+}
+
+.insight-card {
+    min-width: 300px;
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border: 1px solid #eee;
+    transition: 0.3s;
+}
+
+.insight-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(20, 104, 162, 0.15);
+}
+
+/* Image Placeholders - Replace URLs with your actual images */
+.card-image-it, .card-image-eng, .card-image-biz {
+    height: 150px;
+    background-size: cover;
+    background-position: center;
+}
+
+.card-image-it { background-image: url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=400'); }
+.card-image-eng { background-image: url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=400'); }
+.card-image-biz { background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400'); }
+
+.card-content {
+    padding: 20px;
+}
+
+.card-content h3 {
+    margin: 0 0 10px;
+    color: #2c3e50;
+    font-size: 1.2rem;
+}
+
+.requirements {
+    font-size: 0.85rem;
+    color: #666;
+    line-height: 1.4;
+    margin-bottom: 15px;
+    height: 40px; /* Keeps cards uniform height */
+}
+
+.salary-tag {
+    display: inline-block;
+    background: #e8f4fd;
+    color: #1468a2;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+/* Dark Mode Support */
+body.dark-mode .insight-card {
+    background: #2a2a2a;
+    border-color: #444;
+}
+body.dark-mode .card-content h3 { color: white; }
+body.dark-mode .salary-tag { background: #1468a2; color: white; }
+
+.card-image-arts { background-image: url('https://images.unsplash.com/photo-1558655146-d09347e92766?w=400'); }
+.card-image-health { background-image: url('https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=400'); }
+.card-image-fin { background-image: url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=400'); }
+
+/* This ensures the cards are scrollable on mobile/smaller screens */
+.insight-grid {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding: 10px 5px 25px;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Custom Scrollbar for a cleaner look */
+.insight-grid::-webkit-scrollbar {
+    height: 8px;
+}
+.insight-grid::-webkit-scrollbar-thumb {
+    background: #1468a2;
+    border-radius: 10px;
+}
+.insight-grid::-webkit-scrollbar-track {
+    background: #e0e0e0;
+}

@@ -1,46 +1,110 @@
+/* Main Container */
 .results-container {
     width: 85%;
-    max-width: 700px;
-    margin: 140px auto;
-    padding: 20px;
+    max-width: 800px; /* Slightly wider for better table layout */
+    margin: 100px auto; /* Reduced margin so it's not too far down */
+    padding: 40px;
     background: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
-	position: relative;
+    border-radius: 20px; /* Softer corners */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    position: relative;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
 }
 
-.results-container a {
+/* The 'x' Return Button */
+.results-container a.return {
     position: absolute;
-    top: 10px;
-    right: 15px;
-	text-decoration: none;
-	color: inherit;
-	font-size: 25px;
+    top: 20px;
+    right: 25px;
+    text-decoration: none;
+    color: #bbb;
+    font-size: 28px;
+    font-weight: bold;
+    transition: 0.3s;
 }
 
+.results-container a.return:hover {
+    color: #e74c3c;
+    transform: rotate(90deg);
+}
+
+/* Heading Styles */
+h2 {
+    color: #1468a2;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+h3 {
+    color: #2c3e50;
+    margin-top: 40px;
+    border-left: 5px solid #1468a2;
+    padding-left: 15px;
+}
+
+/* RIASEC Code Tags */
 .codes {
-    margin: 15px 0;
+    text-align: center;
+    margin: 25px 0;
 }
 
 .code-tag {
     display: inline-block;
     background: #1468a2;
     color: white;
-    padding: 8px 12px;
-    margin-right: 10px;
-    border-radius: 6px;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 50px; /* Pill shape */
+    font-weight: 600;
+    box-shadow: 0 4px 6px rgba(20, 104, 162, 0.2);
+    transition: all 0.2s ease;
+    cursor: default;
 }
 
+.code-tag:hover {
+    transform: translateY(-3px);
+    filter: brightness(1.1);
+    box-shadow: 0 6px 12px rgba(20, 104, 162, 0.3);
+}
+
+/* Modern Table Styling */
 table {
     width: 100%;
     border-collapse: collapse;
     margin-bottom: 30px;
+    margin-top: 15px;
+    background: #fff;
 }
 
+/* Remove side borders for a cleaner look */
 table, th, td {
-    border: 1px solid #ddd;
+    border: none;
 }
 
-th, td {
-    padding: 10px;
+th {
+    background-color: #f8f9fa;
+    color: #1468a2;
+    text-align: left;
+    padding: 15px;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 2px solid #eee;
+}
+
+td {
+    padding: 15px;
+    border-bottom: 1px solid #f1f1f1;
+    color: #444;
+    font-size: 1rem;
+}
+
+/* Row Highlight */
+tr:hover {
+    background-color: #f0f7ff;
+}
+
+/* Clean up last row border */
+tr:last-child td {
+    border-bottom: none;
 }

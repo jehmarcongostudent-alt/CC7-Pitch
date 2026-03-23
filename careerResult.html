@@ -33,93 +33,57 @@
 </div>
 
 <script>
-// DATABASE — YOU CAN EDIT THIS ANYTIME
+// 1. DATABASE (Define this FIRST so the functions can see the data)
 const programRecommendations = {
-    R: [
-        ["BS Mechanical Engineering", "R"],
-        ["BS Industrial Technology", "R"],
-        ["BS Architecture", "R,A"]
-    ],
-    I: [
-        ["BS Biology", "I"],
-        ["BS Computer Science", "I,R"],
-        ["BS Psychology", "I,S"]
-    ],
-    A: [
-        ["BA Multimedia Arts", "A"],
-        ["BS Graphic Design", "A"],
-        ["BA Communication", "A,S"]
-    ],
-    S: [
-        ["BS Nursing", "S"],
-        ["BS Education", "S"],
-        ["BS Social Work", "S"]
-    ],
-    E: [
-        ["BS Business Administration", "E"],
-        ["BS Marketing", "E,A"],
-        ["Entrepreneurship", "E"]
-    ],
-    C: [
-        ["BS Accountancy", "C"],
-        ["BS Office Administration", "C"],
-        ["BS Information Systems", "C,R"]
-    ]
+    R: [["BS Mechanical Engineering", "R"], ["BS Industrial Technology", "R"], ["BS Architecture", "R,A"]],
+    I: [["BS Biology", "I"], ["BS Computer Science", "I,R"], ["BS Psychology", "I,S"]],
+    A: [["BA Multimedia Arts", "A"], ["BS Graphic Design", "A"], ["BA Communication", "A,S"]],
+    S: [["BS Nursing", "S"], ["BS Education", "S"], ["BS Social Work", "S"]],
+    E: [["BS Business Administration", "E"], ["BS Marketing", "E,A"], ["Entrepreneurship", "E"]],
+    C: [["BS Accountancy", "C"], ["BS Office Administration", "C"], ["BS Information Systems", "C,R"]]
 };
 
 const careerRecommendations = {
-    R: [
-        ["Automotive Technician", "R"],
-        ["Architectural Draftsman", "R,A"]
-    ],
-    I: [
-        ["Research Analyst", "I"],
-        ["Lab Technician", "I"]
-    ],
-    A: [
-        ["Graphic Designer", "A"],
-        ["Animator", "A"]
-    ],
-    S: [
-        ["Teacher", "S"],
-        ["Nurse", "S"]
-    ],
-    E: [
-        ["Sales Manager", "E"],
-        ["Project Coordinator", "E"]
-    ],
-    C: [
-        ["Accountant", "C"],
-        ["Data Encoder", "C"]
-    ]
+    R: [["Automotive Technician", "R"], ["Architectural Draftsman", "R,A"]],
+    I: [["Research Analyst", "I"], ["Lab Technician", "I"]],
+    A: [["Graphic Designer", "A"], ["Animator", "A"]],
+    S: [["Teacher", "S"], ["Nurse", "S"]],
+    E: [["Sales Manager", "E"], ["Project Coordinator", "E"]],
+    C: [["Accountant", "C"], ["Data Encoder", "C"]]
 };
 
-// LOAD RESULTS
-let top3 = JSON.parse(localStorage.getItem("topRIASEC"));
+// 2. LOAD RESULTS FROM LOCAL STORAGE
+let top3 = JSON.parse(localStorage.getItem("topRIASEC")) || ["R", "I", "A"];
 
-// DISPLAY TOP 3
-document.getElementById("codes").innerHTML =
-    top3.map(code => `<span class="code-tag">${code}</span>`).join(" ");
+// 3. DISPLAY TOP 3 CODES AS TAGS
+const codesContainer = document.getElementById("codes");
+codesContainer.innerHTML = top3.map(code => `<span class="code-tag">${code}</span>`).join("");
 
-// FILL PROGRAM TABLE
-const programTable = document.getElementById("programTable");
-top3.forEach(code => {
-    programRecommendations[code].forEach(item => {
-        let row = programTable.insertRow();
-        row.insertCell(0).innerHTML = item[0];
-        row.insertCell(1).innerHTML = item[1];
+// 4. FUNCTION TO FILL TABLES (PREVENTS DUPLICATES)
+function populateTable(tableId, dataSource) {
+    const table = document.getElementById(tableId);
+    const addedItems = new Set(); 
+
+    top3.forEach(code => {
+        if (dataSource[code]) {
+            dataSource[code].forEach(item => {
+                const itemName = item[0];
+                const itemCodes = item[1];
+
+                if (!addedItems.has(itemName)) {
+                    let row = table.insertRow();
+                    row.insertCell(0).innerHTML = `<strong>${itemName}</strong>`;
+                    row.insertCell(1).innerHTML = `<span style="color:#1468a2; font-weight:bold;">${itemCodes}</span>`;
+                    addedItems.add(itemName);
+                }
+            });
+        }
     });
-});
+}
 
-// FILL CAREER TABLE
-const careerTable = document.getElementById("careerTable");
-top3.forEach(code => {
-    careerRecommendations[code].forEach(item => {
-        let row = careerTable.insertRow();
-        row.insertCell(0).innerHTML = item[0];
-        row.insertCell(1).innerHTML = item[1];
-    });
-});
+// 5. EXECUTE POPULATION
+populateTable("programTable", programRecommendations);
+populateTable("careerTable", careerRecommendations);
 </script>
 
 </body>

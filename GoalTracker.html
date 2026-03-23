@@ -1,41 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Sikap</title>
-	<link rel="stylesheet" href="goal.css">
-	<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skill Roadmap Tracker - SIKAP</title>
+    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="goal.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-	<div class="NavBar">
-		<img src="Images/sikap-home-logo.png" alt="SIKAP" class="logo">
-		
-		<div class="NavPages">
-			<a href="index.html">Home</a>
-			<a href="#" class="active">Goal Tracker</a>
-			<a href="career.html">Career Path Finder</a>
-			<a href="OpportunityHub.html">Opportunity Hub</a>
-			<a href="settings.html">Settings</a>
-		</div>
-	</div>
+    <div class="NavBar">
+        <img src="Images/sikap-home-logo.png" alt="SIKAP" class="logo">
+        <div class="NavPages">
+            <a href="index.html">Home</a>
+            <a href="GoalTracker.html" class="active">Goal Tracker</a>
+            <a href="career.html">Career Path Finder</a>
+            <a href="OpportunityHub.html">Opportunity Hub</a>
+            <a href="settings.html">Settings</a>
+        </div>
+    </div>
 
-    <div class="goal-container">
-        <h1>Goal Tracker</h1>
+    <div class="skill-tracker-container">
+        <h1>Skill Roadmap Tracker</h1>
 
-        <div class="goal-input">
-            <input type="text" id="goalText" placeholder="Enter a new goal...">
-            <button onclick="addGoal()">Add Goal</button>
+        <div class="search-section">
+            <p>Choose your target career path to generate a roadmap:</p>
+            <div class="goal-input">
+                <select id="careerSelect">
+                    <option value="">-- Select a Career --</option>
+                    <option value="IT">Information Technology / CS</option>
+                    <option value="Engineering">Mechanical Engineering</option>
+                    <option value="Business">Business & Marketing</option>
+                    <option value="Arts">Multimedia Arts / Design</option>
+                    <option value="Health">Nursing / Healthcare</option>
+                </select>
+                <button onclick="loadRoadmap()">Generate Roadmap</button>
+            </div>
+        </div>
+
+        <div class="progress-container">
+            <div class="progress-text">
+                <span>Overall Completion</span>
+                <span id="progressPercent">0%</span>
+            </div>
+            <div class="progress-bar-bg">
+                <div id="progressBarFill" class="progress-bar-fill" style="width: 0%"></div>
+            </div>
+        </div>
+
+        <div class="goal-input" style="margin-top: 20px;">
+            <input type="text" id="goalText" placeholder="Add a custom skill...">
+            <button onclick="addGoal()">Add Skill</button>
         </div>
 
         <ul id="goalList"></ul>
     </div>
 
     <script src="goal.js"></script>
-	
-	<script src="theme.js"></script>
+    <script src="theme.js"></script>
 </body>
-
 </html>
-
-

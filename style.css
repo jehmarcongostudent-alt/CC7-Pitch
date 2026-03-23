@@ -383,3 +383,30 @@ input:checked + .slider:before {
     font-size: 0.95rem;
     color: var(--text2);
 }
+
+.Features-Section {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 60px 5%;
+    flex-wrap: wrap;
+}
+
+.Feature-Card {
+    background: #ffffff; /* Contrast against your blue-ish background */
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    width: 280px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.Feature-Icon {
+    font-size: 3rem;
+    color: #1468a2; /* SIKAP blue */
+    margin-bottom: 20px;
+}
+
+.Feature-Card h4 { color: #2c3e50; margin-bottom: 10px; }
+.Feature-Card p { color: #7f8c8d; font-size: 0.95rem; line-height: 1.5; }

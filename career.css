@@ -1,30 +1,87 @@
 .quiz-container {
-    width: 80%;
-    max-width: 600px;
-    margin: 120px auto;
-    padding: 20px;
-    background: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+    max-width: 800px;
+    margin: 50px auto;
+    background: var(--card-bg);
+    padding: 50px;
+    border-radius: 25px;
+    box-shadow: 0 15px 50px rgba(0,0,0,0.1);
+    border-top: 10px solid var(--navbar-color);
 }
 
-.quiz-container h2 {
+.ascii-logo {
+    background: var(--navbar-color, #1468a2); /* Uses your blue theme */
+    color: white; /* Clean white text */
+    padding: 30px;
+    border-radius: 15px;
+    font-family: 'Courier New', monospace;
+    font-size: 10px;
+    line-height: 1.2;
     text-align: center;
+    margin-bottom: 25px;
+    white-space: pre;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    border: 2px solid rgba(255,255,255,0.2);
 }
 
-.quiz-container label {
-    display: block;
-    margin-bottom: 10px;
-    font-size: 16px;
+.category-group {
+    margin-bottom: 40px;
+    border-left: 4px solid var(--navbar-color);
+    padding-left: 20px;
+}
+
+.category-group h3 {
+    font-size: 1.8rem;
+    color: var(--navbar-color);
+    margin-bottom: 5px;
+}
+
+.category-desc {
+    color: #636e72;
+    font-style: italic;
+    margin-bottom: 15px;
+}
+
+/* INTERACTIVE LABELS */
+label {
+    display: flex;
+    align-items: center;
+    background: #f8f9fa;
+    padding: 18px;
+    margin-bottom: 12px;
+    border-radius: 12px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: 0.3s;
+}
+
+label:hover {
+    background: #eef6fc;
+    border-color: var(--navbar-color);
+}
+
+/* THE MAGIC: Changes color when clicked */
+label:has(input:checked) {
+    background: var(--navbar-color);
+    color: white !important;
+    font-weight: bold;
+    transform: scale(1.02);
+}
+
+input[type="checkbox"] {
+    width: 22px;
+    height: 22px;
+    margin-right: 15px;
 }
 
 .submit-btn {
-    margin-top: 20px;
-    width: 100%;
-    padding: 12px;
-    background-color: #1468a2;
+    background: linear-gradient(to right, var(--navbar-color), #0984e3);
     color: white;
+    width: 100%;
+    padding: 20px;
     border: none;
-    border-radius: 8px;
+    border-radius: 15px;
+    font-size: 1.2rem;
+    font-weight: bold;
     cursor: pointer;
+    box-shadow: 0 5px 15px rgba(20, 104, 162, 0.3);
 }
